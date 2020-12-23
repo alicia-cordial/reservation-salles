@@ -1,0 +1,30 @@
+.inscription{
+	background-image: url(../images/impressionnism2.jpeg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 50%;
+	margin-bottom: 20px;
+}
+
+.connexion{
+	background-image: url(../images/impressionnism.jpeg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 50%;
+	margin-bottom: 20px;
+}
+
+.profil{
+	background-image: url(../images/impressionnism1.jpeg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 50%;
+	margin-bottom: 20px;
+}
+
+h1{
+	  color: white;
+    text-shadow: 2px 2px 2Px black;
+    text-align: center;
+    padding-top: 50px;
+}

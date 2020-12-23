@@ -1,0 +1,21 @@
+.planning,
+.reservation-form {
+    background-image: url(../images/ecole7.jpeg);
+    background-size: 100%;
+    height: 50%;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 2px 2px 2Px black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reservation {
+    background-image: url(../images/ecole8.jpeg);
+    background-size: 100%;
+    height: 50%;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 2px 2px 2Px black;
+    text-align: center;
+}

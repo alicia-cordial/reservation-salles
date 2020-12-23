@@ -1,0 +1,21 @@
+.ecole{
+	background-image: url(images/ecole8.jpeg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	
+}
+
+
+.section{
+	background-image: url(images/art.jpeg);
+	background-size: 100%;
+	padding: 10px;
+	text-shadow: 2px 2px 2px beige;
+	text-align: justify;
+}
+
+
+
+h1, h2{
+	text-align: center;
+}
