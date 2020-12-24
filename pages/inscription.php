@@ -9,11 +9,11 @@ if (isset($_POST['forminscription'])){
 
   $login = htmlspecialchars($_POST['login']);
   
-  $password = $_POST['password'];
-  $password_hash = password_hash($password, PASSWORD_BCRYPT);
+  $password = sha1($_POST['password']);
   
-  $password2 = $_POST['password2'];
-  $password_hash = password_hash($password2, PASSWORD_BCRYPT);
+  
+  $password2 = sha1($_POST['password2']);
+  
  
     $user->register($login, $password, $password2);
     $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";

@@ -14,11 +14,11 @@ if(isset($_SESSION['user'])){
 
     if(isset($_POST['submit'])) {
 
-    $description = $_POST['description'];
-    $db = $_POST['debut'];
-    $fn = $_POST['fin'];
-    $date = $_POST['date'];
-    $titre = $_POST['titre'];
+    $description = htmlspecialchars($_POST['description']);
+    $db = htmlspecialchars($_POST['debut']);
+    $fn = htmlspecialchars($_POST['fin']);
+    $date = htmlspecialchars($_POST['date']);
+    $titre = htmlspecialchars($_POST['titre']);
 
     $debut = $date. " " .$db;
     $fin = $date. " " .$fn;

@@ -10,8 +10,8 @@ if (isset($_POST['formconnexion'])){
 
   $login = (htmlspecialchars($_POST['login']));
   
-  $password = $_POST['password']; 
-  $password_hash = password_hash($password, PASSWORD_BCRYPT);
+  $password = sha1($_POST['password']); 
+  
 
    $user->connect($_POST['login'], $_POST['password']);
 $_SESSION['user'] = $user ;
