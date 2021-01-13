@@ -1,74 +1,24 @@
-
-
 <?php 
 
 require_once '../library/user.php';
 
-require_once '../library/booking.php';
-
 session_start();
-
-$booking = new booking;
 
 if(isset($_SESSION['user'])){
 
     $user = $_SESSION['user'];
+    
+    $bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
+    $reqdata = $bdd->prepare("SELECT titre, DATE_FORMAT(fin, '%w'), DATE_FORMAT(debut,'%T'), DATE_FORMAT(fin,'%T'),utilisateurs.login, reservations.id FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id WHERE week(reservations.debut) = WEEK(CURDATE())");
 
-
-
- $bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
-
-
-$reqdata = $bdd->prepare("SELECT titre, DATE_FORMAT(fin, '%w'), DATE_FORMAT(debut,'%T'), DATE_FORMAT(fin,'%T'),utilisateurs.login, reservations.id FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id WHERE week(reservations.debut) = WEEK(CURDATE())");
-$reqdata->execute(array());
-$result = $reqdata->fetchAll();
+    $reqdata->execute(array());
+    $result = $reqdata->fetchAll();
 }
 
 ?>
 
 
- <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  
-  <link rel= "stylesheet" href= "../css/booking.css">
-  <title>Réservation de salle</title>
-</head>
-<body>
-
-  <div class="navbar-fixed">
-    <nav class="nav-wrapper  deep-purple lighten-5">
-      <div class="container">
-        <a href="#" class="brand-logo">Réservation de salles
-        <i class="material-icons text-white">assignment</i>
-        </a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-links">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="../index.php">Home</a></li>
-          <li><a href="reservation.php" class="btn white indigo-text">Réservations</a></li>
-          <li><a href="reservation-form.php" class="btn white indigo-text">Réserver</a></li>
-          <li><a href="connexion.php" class="btn white indigo-text">Connexion</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <ul class="sidenav" id="mobile-links">
-    <li><a href="../index.php">Home
-    <i class="material-icons">home </i>
-    </a></li>
-    <li><a href="reservation.php" class="btn white indigo-text">Réservations</a></li>
-    <li><a href="reservation-form.php" class="btn white indigo-text">Réserver</a></li>
-  </ul>
-    
+<?php include '../includes/header.php'; ?>
      
         <main>
 
@@ -174,5 +124,5 @@ for ($h = 1; $h <= 10; $h++) {
     ?>
 
      </main>
-</body>
+     <?php include '../includes/footer.php'; ?>
 </html>

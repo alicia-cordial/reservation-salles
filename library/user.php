@@ -55,7 +55,7 @@ public function connect($login, $password){
               $this->id = $user['id'];
               $this->login = $user['login'];
               $this->password = $user['password'];
-              header("Location: profil.php?id=".$this->id);
+              header("Location: profil.php");
               return $user;
             
             }
