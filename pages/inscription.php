@@ -1,6 +1,7 @@
 <?php
 
 require_once '../library/user.php';
+$titre = 'Inscription';
 
 session_start();
 $user = new user; 

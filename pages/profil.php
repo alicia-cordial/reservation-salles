@@ -2,6 +2,9 @@
 
 require_once '../library/user.php';
 
+$titre = 'Profil';
+
+
 session_start();
 
 

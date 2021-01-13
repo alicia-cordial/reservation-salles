@@ -1,6 +1,9 @@
 <?php
 require_once '../library/user.php';
 
+$titre = 'Connexion';
+
+
 session_start();
 $user = new user;
 

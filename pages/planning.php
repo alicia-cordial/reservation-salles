@@ -2,6 +2,9 @@
 
 require_once '../library/user.php';
 
+$titre = 'Planning';
+
+
 session_start();
 
 if(isset($_SESSION['user'])){

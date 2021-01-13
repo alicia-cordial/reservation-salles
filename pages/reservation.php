@@ -3,6 +3,8 @@
 require_once '../library/user.php';
 require_once '../library/booking.php';
 
+$titre = 'Réservations';
+
 session_start();
 
 

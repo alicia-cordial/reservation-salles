@@ -3,6 +3,9 @@
 require_once '../library/user.php';
 require_once '../library/booking.php';
 
+$titre = 'Réservations salle';
+
+
 session_start();
 
 date_default_timezone_set('Europe/Paris');
