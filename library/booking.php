@@ -7,25 +7,6 @@ require_once '../library/user.php';
 class booking{
    
 
-   
-
-//RESERVATION SALLE
-
-    
-public function registersalle($description, $titre, $debut, $fin, $id_utilisateur){
-
-
-    $bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
-
-    $req = $bdd->prepare("INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES (?, ?, ?, ?, ?)");
-    $req->execute(array($titre, $description, $debut, $fin, $id_utilisateur));
- 
-
-//return true;
-}
-
-
-/*
 //TOUTES LES RESERVATIONS
 
 public function table(){
@@ -34,6 +15,6 @@ public function table(){
     $requser->execute();
 
 }
-    */
+    
 }
 ?>

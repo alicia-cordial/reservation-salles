@@ -18,7 +18,7 @@ if(isset($_SESSION['user'])){
 
 
 if(isset($_POST['formprofil'])){
-  $user->update($_POST['login'], $_POST['password'], $_POST['password2'], $user['id']);
+  $user->update($_POST['login'], $_POST['password'], $_POST['password2'], $user->getId());
 }
 
 }
