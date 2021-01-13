@@ -8,15 +8,11 @@ $user = new user;
 if (isset($_POST['forminscription'])){
 
   $login = htmlspecialchars($_POST['login']);
+  $password = htmlspecialchars($_POST['password']);
+  $password2 = htmlspecialchars($_POST['password2']);
   
-  $password = sha1($_POST['password']);
-  
-  
-  $password2 = sha1($_POST['password2']);
-  
- 
-    $user->register($login, $password, $password2);
-    $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+  $user->register($login, $password, $password2);
+  $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
  
 }
 ?>
