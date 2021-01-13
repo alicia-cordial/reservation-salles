@@ -25,7 +25,7 @@ public function registersalle($description, $titre, $debut, $fin, $id_utilisateu
 }
 
 
-
+/*
 //TOUTES LES RESERVATIONS
 
 public function table(){
@@ -33,35 +33,7 @@ public function table(){
     $requser = $bdd->prepare("SELECT login, titre, description, debut, fin FROM `reservations` INNER JOIN `utilisateurs` ON reservations.id_utilisateur = utilisateurs.id;");
     $requser->execute();
 
-
-
-
-    $i = 0;
-
-    echo "<table>" ;
-        
-    while ($result = $requser->fetch(PDO::FETCH_ASSOC))
-    {
-        if ($i == 0)
-      {
-        
-        foreach ($result as $key => $value)
-        {
-          echo "<th>$key</th>";
-        }
-        $i++;
-    
-      }
-      echo "<tr>";
-      foreach ($result as $key => $value) {
-        echo "<td>$value</td>";
-      }
-      echo "</tr>";
-    }
-    
-    echo "</table>";
-
 }
-    
+    */
 }
 ?>
