@@ -1,16 +1,16 @@
 <?php
 
 require_once '../library/user.php';
-
 require_once '../library/booking.php';
 
 session_start();
 
-$booking = new booking;
+date_default_timezone_set('Europe/Paris');
 
 if(isset($_SESSION['user'])){
 
     $user = $_SESSION['user'];
+    $booking = new booking;
 
     if(isset($_POST['submit'])) {
 
@@ -25,16 +25,17 @@ if(isset($_SESSION['user'])){
 
     $id_utilisateur = $user->getId();
 
+    if ($titre && $description && $date && $db && $fn){
 
     $booking->registersalle($description, $titre, $debut, $fin, $id_utilisateur);
     header("Location: planning.php?id=".$user->getId());
+    }
 }
 
 
 }
  ?>
-
-
+    
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -81,43 +82,39 @@ if(isset($_SESSION['user'])){
 </section>
 
 </main>
-
-
-<div class="row">
-    <form class="col s12" method="post" action="reservation-form.php">
-      <div class="row">
-        <div class="input-field col s6">
-          <input  id="titre" name="titre" type="text" class="validate" required>
-          <label for="titre">Titre de l'évènement</label>
-        </div>
-      </div>
+<section id="resa">
       
-     <div class="row">
-        <div class="input-field col s12">
-          <textarea id="description" class="materialize-textarea" name="description" required></textarea>
-          <label for="description">Description</label>
+
+      <form id="formulaire" method="post" action="reservation-form.php">
+        <h1 id="form-title"> RÉSERVER UN ESPACE</h1>
+
+        <label>TITRE</label>
+        <input id="input-line" type="text" name="titre" id="titre" placeholder="titre"/>
+ 
+        <div id="time">
+          <label>date début</label>
+          <input id="dateinput" type="date" name="date">
+                        
+          <label>début</label>
+          <input class="resahour" type="time" name="debut" min="08" max="18" step="3600"/>
+
+          <label>fin</label>
+          <input  class="resahour" type="time" name="fin" min="09" max="19" step="3600"/>
         </div>
-      </div>
-   
-      <input type="date" id="date" name="date"
-       value="2020-12-20"
-       min="2020-12-20" max="2022-12-31" required>
+            
+        <label>DESCRIPTION</label>
+        <textarea type="textarea" name="description" class="description" id="description" placeholder="description"></textarea>
 
-      <input type="time" id="debut" name="debut"
-       min="09:00" max="19:00" required>
+        <div id="box-button">
+          <button class="icon-btn add-btn">
+          <div class="add-icon"></div>
+          <input class="btn-txt" type="submit" value="RÉSERVER" name="submit">
+        </div>
+      </form>
 
-       <input type="time" id="fin" name="fin"
-       min="10:00" max="19:00" required>
+    </section>
 
-       <button class="btn waves-effect waves-light black" type="submit" name="submit">Submit
-    <i class="material-icons right">send</i>
-  </button>
 
-       </div> 
-     
-    </form>
-  </div>
-        
 </main>
 
             
