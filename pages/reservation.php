@@ -1,7 +1,6 @@
 <?php
 
 require_once '../library/user.php';
-require_once '../library/booking.php';
 
 $titre = 'Réservations';
 
@@ -11,23 +10,16 @@ session_start();
 ?>
 
 
-
-
 <?php include '../includes/header.php'; ?>
-
-
-
 
 <main>
 
 
 <section id="event">
-        <div id="eventcontainer">
+  <div id="eventcontainer">
     
+  <h2>Les réservations déjà effectuées<h2>
 
-<article class="reservation">
-<h2>Les réservations déjà effectuées<h2>
-</article>
 
 <?php
 
@@ -36,7 +28,7 @@ if(isset($_SESSION['user'])){
     $user = $_SESSION['user']; 
 
     $bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
-    $requser = $bdd->prepare("SELECT titre, description,DATE_FORMAT(debut,'%d/%m/%Y, %H:%i:%s') as 'date de début', DATE_FORMAT(fin,'%d/%m/%Y, %H:%i:%s') as 'date de fin', utilisateurs.login FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id");
+    $requser = $bdd->prepare("SELECT utilisateurs.login, titre, description,DATE_FORMAT(debut,'%d/%m/%Y, %H:%i:%s') as 'date de début', DATE_FORMAT(fin,'%d/%m/%Y, %H:%i:%s') as 'date de fin' FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id");
     $requser->execute();
 }
 
@@ -72,10 +64,12 @@ while ($result = $requser->fetch(PDO::FETCH_ASSOC))
 
 echo "</table>";
 ?>
-      </div>
+
+  </div>
  </section>
 
 </main>
+
 
 <?php include '../includes/footer.php'; ?>
 

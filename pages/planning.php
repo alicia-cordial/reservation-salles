@@ -4,11 +4,10 @@ require_once '../library/user.php';
 
 $titre = 'Planning';
 
-
 session_start();
 
 if(isset($_SESSION['user'])){
-
+    
     $user = $_SESSION['user'];
     
     $bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
@@ -23,10 +22,9 @@ if(isset($_SESSION['user'])){
 
 <?php include '../includes/header.php'; ?>
      
-        <main>
+<main>
 
-
-   <section class="grey  white-text">
+    <section class="white-text">
 
         <div class="row ">
             <div class="col s12 l12 center-align">
@@ -48,7 +46,8 @@ if(isset($_SESSION['user'])){
                 </p>
             </div>
         </div>
-        </section>
+    
+    </section>
 
     <?php
 
@@ -62,9 +61,9 @@ if(isset($_SESSION['user'])){
     $nom_mois = date('M');
 
     echo '<br/>
-    <section class="row white">
+    <section class="row">
     <div class= "col s12 l10 offset-l1">
-<div id="titreMois"><strong>' . $nom_mois . ' ' . date('Y') . '</strong></div>';
+    <div id="titreMois"><strong>' . $nom_mois . ' ' . date('Y') . '</strong></div>';
 
     echo '<table>';
 
@@ -102,20 +101,20 @@ for ($h = 1; $h <= 10; $h++) {
 
             $resa = 1;
 
-            echo '<div class="box red lighten-2 white-text">';
+            echo '<div class="box  deep-purple lighten-4 white-text">';
             echo 'Titre :' . $value[0] . '</br>';
             echo 'De ' . $value[2] . ' à ' . $value[3] . ' H </br>';
             echo 'Créateur : ' . $value[4] . '</br>';
 
             if (isset($_SESSION["user"])) {
-                echo ' <a class="blue-text text-darken-4" href = "reservation.php?id=' . $value[5] . '">Lien de la réservation</a></td>';
+                echo ' <a class="black-text" href = "reservation.php?id=' . $value[5] . '">Lien de la réservation</a></td>';
             }
 
             echo '</div>';
         }
     }
     if ($resa == 0) {
-        echo '<a class="green-text" href="reservation-form.php">Disponible </a>';
+        echo '<a class="blue black-text" href="reservation-form.php">Disponible </a>';
     }
     echo '</td>';
 }
