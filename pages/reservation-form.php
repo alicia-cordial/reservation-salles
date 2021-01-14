@@ -1,7 +1,6 @@
 <?php
 
 require_once '../library/user.php';
-require_once '../library/booking.php';
 
 $titre = 'Réservations salle';
 
@@ -13,7 +12,11 @@ date_default_timezone_set('Europe/Paris');
 if(isset($_SESSION['user'])){
 
     $user = $_SESSION['user'];
-    $booking = new booking;
+    
+    $bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
+
+    $req = $bdd->prepare("INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES (?, ?, ?, ?, ?)");
+    $req->execute(array($titre, $description, $debut, $fin, $id_utilisateur));
 
     if(isset($_POST['submit'])) {
 
