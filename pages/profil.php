@@ -31,33 +31,31 @@ if(isset($_POST['formprofil'])){
 
 <?php include '../includes/header.php'; ?>
 
-<section class="profil">
-
 <h1>Bienvenue <?php echo $user->getLogin()?></h1>
 
-</section>
-
 <main class="valign-wrapper"> 
+
+
     
 <div class="row">
   <form class="col s12" action="profil.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="input-field col s12">
-          <input placeholder="login" id="login" type="text" name="login"  maxlength="20" class="validate"/>
+          <input placeholder="login" id="login" type="text" name="login"  maxlength="20" class="validate white-text"/>
           <label for="login">New Login</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate" name="password"  maxlength="20"/>
+          <input id="password" type="password" class="validate white-text" name="password"  maxlength="20"/>
           <label for="password">Nouveau Password</label>
         </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-          <input id="password2" type="password" class="validate" name="password2"  maxlength="20"/>
+          <input id="password2" type="password" class="validate white-text" name="password2"  maxlength="20"/>
           <label for="password2">Confirmation Password</label>
       </div>
     </div>

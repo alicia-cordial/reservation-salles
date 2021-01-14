@@ -1,0 +1,29 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    background-image: url(../images/biblio1.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 2Px black;
+    text-align: center;
+    padding-top: 50px;
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+a {
+    color: white;
+}

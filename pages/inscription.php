@@ -21,9 +21,8 @@ if (isset($_POST['forminscription'])){
 
 <?php include '../includes/header.php'; ?>
 
-<section class="inscription">
-  <h1>N'hésitez pas à vous inscrire</h1>
-</section>
+
+<h1>N'hésitez pas à vous inscrire pour réserver une salle</h1>
 
 <main class="valign-wrapper">
 
@@ -35,21 +34,21 @@ if (isset($_POST['forminscription'])){
   <form class="col s12" action="inscription.php" method="post">
     <div class="row">
         <div class="input-field col s12">
-          <input placeholder="login" id="login" type="text" name="login" class="validate" value="<?php if(isset($login)) { echo $login; } ?>"  maxlength="20" required/>
+          <input placeholder="login" id="login" type="text" name="login" class="validate white-text" value="<?php if(isset($login)) { echo $login; } ?>"  maxlength="20" required/>
           <label for="login">Login</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate" name="password"  maxlength="20" required/>
+          <input id="password" type="password" class="validate white-text" name="password"  maxlength="20" required/>
           <label for="password">Password</label>
         </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-          <input id="password2" type="password" class="validate" name="password2"  maxlength="20" required/>
+          <input id="password2" type="password" class="validate white-text" name="password2"  maxlength="20" required/>
           <label for="password2">Confirmation Password</label>
       </div>
     </div>
@@ -67,6 +66,8 @@ if (isset($erreur))
 ?>
     </form>
 </div>
+
+
 
 
 </main>

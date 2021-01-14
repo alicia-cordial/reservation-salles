@@ -18,33 +18,33 @@ if (isset($_POST['formconnexion'])){
 
    $user->connect($_POST['login'], $_POST['password']);
 $_SESSION['user'] = $user ;
+header("Location: profil.php");
 }
 
 ?>
 
 <?php include '../includes/header.php'; ?>
 
-<body>
-
-<section class="connexion">
-  <h1>Bienvenue sur la page de connexion</h1>
-
-</section>
+<h1>Bienvenue sur la page de connexion</h1>
 
    <!--Formulaire-->      
 
 <main class="valign-wrapper">
+
+
+
+
    <div class="row">
     <form class="col s12" action="connexion.php" method="post">
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="login" id="login" type="text" name="login" class="validate" required/>
+          <input placeholder="login" id="login" type="text" name="login" class="validate white-text" required/>
           <label for="login">Login</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate" name="password" required/>
+          <input id="password" type="password" class="validate white-text" name="password" required/>
           <label for="password">Password</label>
         </div>
       </div>
