@@ -9,6 +9,8 @@ session_start();
 
 date_default_timezone_set('Europe/Paris');
 
+$bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
+
 if(isset($_SESSION['user'])){
 
     $user = $_SESSION['user'];
@@ -29,17 +31,15 @@ if(isset($_SESSION['user'])){
 
       if ($titre && $description && $date && $db && $fn){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=reservationsalles', 'root', '');
 
         $req = $bdd->prepare("INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES (?, ?, ?, ?, ?)");
         $req->execute(array($titre, $description, $debut, $fin, $id_utilisateur));
     
-        header("Location: planning.php?id=".$user->getId());
+        header("Location: planning.php");
       }
     }
 
 }
-
  ?>
 
 <?php include '../includes/header.php'; ?>
@@ -89,7 +89,7 @@ if(isset($_SESSION['user'])){
       </div>
     </div>
 
-    <button class="btn waves-effect waves-light black" type="submit" name="forminscription">Submit
+    <button class="btn waves-effect waves-light black" type="submit" name="submit">Submit
     <i class="material-icons right">send</i>
   </button>
   
