@@ -1,9 +1,11 @@
 <?php
 
 require_once '../library/user.php';
+
 $titre = 'Inscription';
 
 session_start();
+
 $user = new user; 
 
 if (isset($_POST['forminscription'])){
@@ -22,9 +24,9 @@ if (isset($_POST['forminscription'])){
 <?php include '../includes/header.php'; ?>
 
 
-<h1>N'hésitez pas à vous inscrire pour réserver une salle</h1>
+  <h1>N'hésitez pas à vous inscrire pour réserver une salle</h1>
 
-<main class="valign-wrapper">
+<main class="user valign-wrapper">
 
     
         <!--FORMULAIRE--> 
@@ -71,8 +73,6 @@ if (isset($erreur))
 
 
 </main>
-
-
 
 <?php include '../includes/footer.php'; ?>
 

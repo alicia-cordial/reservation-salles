@@ -4,27 +4,17 @@ require_once '../library/user.php';
 
 $titre = 'Profil';
 
-
 session_start();
-
-
-$user = new user;
-
 
 if(isset($_SESSION['user'])){
 
   $user = $_SESSION['user'];
 
-
-
-if(isset($_POST['formprofil'])){
-  $user->update($_POST['login'], $_POST['password'], $_POST['password2'], $user->getId());
-}
+  if(isset($_POST['formprofil'])){
+    $user->update($_POST['login'], $_POST['password'], $_POST['password2'], $user->getId());
+  }
 
 }
-/*else{
-  header("Location: connexion.php?");
-}*/
  
 ?>
 
@@ -33,7 +23,7 @@ if(isset($_POST['formprofil'])){
 
 <h1>Bienvenue <?php echo $user->getLogin()?></h1>
 
-<main class="valign-wrapper"> 
+<main class="user valign-wrapper"> 
 
 
     
@@ -74,8 +64,6 @@ if (isset($erreur))
 
     </form>
 </div>
-
-
 
 </main>
 

@@ -5,20 +5,17 @@ $titre = 'Connexion';
 
 
 session_start();
+
 $user = new user;
-
-
 
 if (isset($_POST['formconnexion'])){
 
-  $login = (htmlspecialchars($_POST['login']));
+  $login = htmlspecialchars($_POST['login']);
+  $password = htmlspecialchars($_POST['password']); 
   
-  $password = sha1($_POST['password']); 
-  
-
-   $user->connect($_POST['login'], $_POST['password']);
-$_SESSION['user'] = $user ;
-header("Location: profil.php");
+  $user->connect($_POST['login'], $_POST['password']);
+  $_SESSION['user'] = $user ;
+  header("Location: profil.php");
 }
 
 ?>
@@ -29,7 +26,7 @@ header("Location: profil.php");
 
    <!--Formulaire-->      
 
-<main class="valign-wrapper">
+<main class="user valign-wrapper">
 
 
 
@@ -53,19 +50,19 @@ header("Location: profil.php");
   <button class="btn waves-effect waves-light black " type="submit" name="formconnexion">Submit
     <i class="material-icons right">send</i>
   </button>
-        <?php
+
+<?php
 if (isset($erreur))
 {
   echo $erreur;
 }
 ?>
-    </form>
-  </div>
+ 
+  </form>
+</div>
 
 </main>
-
             
 <?php include '../includes/footer.php'; ?>
 
-</body>
 </html>
