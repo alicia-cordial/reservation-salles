@@ -1,6 +1,4 @@
-
-  <html lang="en">
-
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -12,23 +10,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   
   <link rel= "stylesheet" href= "index.css">
-  <title>Réservation de salle</title>
+  
+  <title>Beaux arts - Paris</title>
 </head>
+
+
 <body>
 
 <div class="navbar-fixed">
-  <nav class="nav-wrapper  deep-purple lighten-5">
+  <nav class="nav-wrapper  black">
     <div class="container">
-      <a href="#" class="brand-logo">Réservation de salle
-      <i class="material-icons text-white">assignment</i>
+      <a href="#" class="brand-logo">Beaux arts - Paris
+      <i class="material-icons text-white right">brush</i>
       </a>
       <a href="#" class="sidenav-trigger" data-target="mobile-links">
         <i class="material-icons">menu</i>
       </a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="index.php">About</a></li>
+        <li><a href="index.php">Contact</a></li>
         <li><a href="../reservation-salles/pages/inscription.php" class="btn white indigo-text">Inscription</a></li>
         <li><a href="../reservation-salles/pages/connexion.php" class="btn white indigo-text">Login</a></li>
       </ul>
@@ -37,51 +37,71 @@
 </div>
 
   <ul class="sidenav" id="mobile-links">
-    <li><a href="#">Home
-    <i class="material-icons">home </i>
+    <li><a href="index.php">About
+      <i class="material-icons">brightness_6 </i>
     </a></li>
-    <li><a href="#">About
-    <i class="material-icons">brightness_6 </i>
+    
+    <li><a href="index.php">Contact
+      <i class="material-icons">mail_outline </i>
     </a></li>
-    <li><a href="#">Contact
-    <i class="material-icons">mail_outline </i>
-    </a></li>
-    <li><a href="../reservation-salles/pages/reservation-form.php">Réservation</a></li>
-          <li><a href="../reservation-salles/pages/inscription.php" class="btn white indigo-text">Inscription</a></li>
-          <li><a href="../reservation-salles/pages/connexion.php" class="btn white indigo-text">Login</a></li>
+    
+    <li><a href="../reservation-salles/pages/inscription.php" class="btn white indigo-text">Inscription</a></li>
+    
+    <li><a href="../reservation-salles/pages/connexion.php" class="btn white indigo-text">Login</a></li>
   </ul>
   
 
 
 <main>
-  <section class="ecole">
-<h1>LES BEAUX ARTS DE PARIS</h1>
-  </section>
 
-<section class="section">
+
+<section class="artimages">
+
+    <section class="vertical">
+
+        <section class="images">  
+
+            <img src="images/art1.jpg"/>
+
+            <img src="images/art3.jpg"/>
+  
+      </section>
+
+  
+       <section class="title">
+  
+            <h1>LES BEAUX ARTS DE PARIS</h1>
+  
+       </section>
+
+    </section>
+
+
+
+<img src="images/art2.png"/>
+
+<img src="images/art4.jpg"/>
 
 
 </section>
-
-
 
 </main>      
 
 
 
-<footer class="page-footer pink lighten-4 center">
+<footer class="page-footer black center">
   <div class="container">
     <div class="col l12 s6">
       <h5 class="white-text">Links</h5>
       <ul>
         <li><a href="facebook.com">
-          <img src="../discussion/images/facebook.png" alt="facebook"/>
+          <img src="images/facebook.png" alt="facebook"/>
         </a></li>
         <li><a href="instagram.com">
-        <img src="../discussion/images/instagram.png" alt="instagram"/>
+        <img src="images/instagram.png" alt="instagram"/>
         </a></li>
         <li><a href="twitter.com">
-        <img src="../discussion/images/twitter.png" alt="twitter"/>
+        <img src="images/twitter.png" alt="twitter"/>
         </a></li>
       </ul>
     </div>

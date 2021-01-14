@@ -1,5 +1,5 @@
 <footer class="page-footer black center">
-<footer class="page-footer pink lighten-4 center">
+<footer class="page-footer black center">
 <div class="container">
   <div class="col l12 s6">
     <h5 class="white-text">Links</h5>
