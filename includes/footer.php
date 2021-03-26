@@ -1,28 +1,23 @@
-<footer class="page-footer center black">
-    <div class="container">
-        <div class="row center valign-wrapper">
-           
-            <div class=" col l4 offset-l2 s12">
-            <p class="grey-text text-lighten-2">Liens développeuse</p>
-            <ul>
-                    <li><a href="#" class="valign-wrapper ">Alicia<img width="30" src="../images/twitter.png" alt="twitter"></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    </div>
 
-    <div class="footer-copyright center">
-        <div class="container"> © 2020 Piglet Copyright</div>
-    </div>
+<footer>
+    <article class="footerinfos">
+
+        <section class="imgsocial">
+            <a href="https://www.linkedin.com/in/alicia-cordial-0538b8205/"><img src="../image/icons8-linkedin-26.png" alt="linkedin"/></a>
+            <a href="https://github.com/alicia-cordial/"><img src="../image/icons8-github-30.png" alt="github"/></a>
+        </section>
+
+
+        <section class="production">
+            <p>Alicia Cordial</p>
+            <p>School : LaPlateforme_ Marseille</p>
+            <p>alicia.cordial@laplateforme.io</p>
+        </section>
+
+    </article>
 </footer>
 
-<!-- Compiled and minified JavaScript -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
-</script>
+
 </body>
+
+</html>

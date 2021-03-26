@@ -1,0 +1,54 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 25px;
+    opacity: 0.3;
+    transition: 0.5s;
+    padding: 5px;
+    bottom: 0;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+footer a {
+    color: white;
+    display: inline;
+    background-color: transparent;
+    margin: auto;
+}
+
+@media screen and (max-width: 640px) {
+    footer a {
+        display: block;
+    }
+}
+
+.footerinfos {
+    display: flex;
+    flex-direction: row;
+}
+
+footer img {
+    opacity: 0.5;
+    filter: invert(100%);
+    transition: 0.5s;
+}
+
+.imgsocial {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgsocial a:hover img {
+    opacity: 1;
+}
+
+.production {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+}

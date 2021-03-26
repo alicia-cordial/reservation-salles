@@ -22,7 +22,6 @@ if (isset($_POST['formconnexion'])){
 
 <?php include '../includes/header.php'; ?>
 
-<h1>Bienvenue sur la page de connexion</h1>
 
    <!--Formulaire-->      
 
@@ -30,26 +29,8 @@ if (isset($_POST['formconnexion'])){
 
 
 
+<h1>Bienvenue sur la page de connexion</h1>
 
-   <div class="row">
-    <form class="col s12" action="connexion.php" method="post">
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="login" id="login" type="text" name="login" class="validate white-text" required/>
-          <label for="login">Login</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate white-text" name="password" required/>
-          <label for="password">Password</label>
-        </div>
-      </div>
- 
-     
-  <button class="btn waves-effect waves-light black " type="submit" name="formconnexion">Submit
-    <i class="material-icons right">send</i>
-  </button>
 
 <?php
 if (isset($erreur))
@@ -60,9 +41,27 @@ if (isset($erreur))
  
   </form>
 </div>
+<form method="post" action="connexion.php" class="formlogin">
+  <fieldset>
+     <div >
+       <input placeholder="login" id="login" type="text" name="login" class="validate white-text" required/>
+       <label for="login">Login</label>
+     </div>
+ 
+   
+     <div>
+       <input id="password" type="password" class="validate white-text" name="password" required/>
+       <label for="password">Password</label>
+     </div>
+  
+
+  
+<button type="submit" name="formconnexion">Submit</button>
+
+      </fieldset>
+  </form>
 
 </main>
             
 <?php include '../includes/footer.php'; ?>
 
-</html>
