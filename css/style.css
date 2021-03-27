@@ -68,7 +68,7 @@ article {
     form {
         display: flex;
         flex-direction: column;
-        max-width: 800px/*-- à modifier en fonction de la largeur désirée --*/
+        /*max-width: 800px/*-- à modifier en fonction de la largeur désirée --*/
         ;
         background-color: rgba(0, 0, 0, 0.4);
         border-radius: 20px;
