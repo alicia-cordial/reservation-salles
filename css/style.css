@@ -60,9 +60,9 @@ a {
 }
 
 
-/*FORM*/
+/*********FORM********/
 
-.mainregister {
+main {
     display: flex;
     flex-direction: column;
 }
@@ -86,35 +86,52 @@ p {
     color: white;
 }
 
-.form,
-.formlogin {
-    display: flex;
-    flex-direction: row;
-    max-width: 600px;
-    padding: 20px;
-}
-
-.form input,
 textarea,
-.formlogin input,
-.formupdate input,
-.formcontact input {
+form input {
     background: transparent;
     border: none;
     border-bottom: 1px solid white;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
-.formregister,
-.formupdate {
-    margin-right: 15px;
-    align-items: center;
+
+/******BOUTON*****/
+
+button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px black;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-decoration: none;
 }
 
-.formupdate {
-    align-items: center;
+
+/**************MESSAGES ERREURS********/
+
+.errors p {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
-.formupdate fieldset {
-    height: 100%;
+.error p {
+    text-shadow: 2px 2px 2px red;
+    text-align: center;
+    font-size: 1.4em;
 }

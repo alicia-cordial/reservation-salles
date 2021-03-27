@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../library/user.php';
+require_once '../classes/user.php';
 
 $titre = 'Planning';
 

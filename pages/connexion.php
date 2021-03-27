@@ -1,67 +1,75 @@
 <?php
-require_once '../library/user.php';
-
-$titre = 'Connexion';
-
-
+$titre = "connexion";
+require_once '../classes/user.php';
+require_once '../classes/validator.php';
 session_start();
 
-$user = new user;
 
-if (isset($_POST['formconnexion'])){
+if (isset($_POST['formconnexion'])) {
 
-  $login = htmlspecialchars($_POST['login']);
-  $password = htmlspecialchars($_POST['password']); 
-  
-  $user->connect($_POST['login'], $_POST['password']);
-  $_SESSION['user'] = $user ;
-  header("Location: profil.php");
+    $validator = new validator();
+    $login = htmlspecialchars($_POST['login']);
+    $password = htmlspecialchars($_POST['password']);
+
+    if ($validator->passwordConnect($login, $password) == 0) {
+        $error = "Vérifiez votre login ou votre mot de passe.";
+    } else {
+        $user = new user();
+        $user->connect($login);
+        $_SESSION['user'] = $user;
+        header("Location: profil.php");
+    }
+
 }
 
 ?>
+
 
 <?php include '../includes/header.php'; ?>
 
-
-   <!--Formulaire-->      
-
-<main class="user valign-wrapper">
-
-
-
-<h1>Bienvenue sur la page de connexion</h1>
-
-
-<?php
-if (isset($erreur))
-{
-  echo $erreur;
-}
-?>
- 
-  </form>
-</div>
-<form method="post" action="connexion.php" class="formlogin">
-  <fieldset>
-     <div >
-       <input placeholder="login" id="login" type="text" name="login" class="validate white-text" required/>
-       <label for="login">Login</label>
-     </div>
- 
+<main>
    
-     <div>
-       <input id="password" type="password" class="validate white-text" name="password" required/>
-       <label for="password">Password</label>
-     </div>
-  
+        <h1><em>Connexion</em></h1>
 
-  
-<button type="submit" name="formconnexion">Submit</button>
 
-      </fieldset>
-  </form>
+        <!--Formulaire-->
+        <form action="connexion.php" method="post">
+            
+                <div>
+                    <input placeholder="login" id="login" type="text" name="login" required/>
+                    <label for="login">Login</label>
+                </div>
+           
+      
+                <div>
+                    <input id="password" type="password" name="password" required/>
+                    <label for="password">Password</label>
+                </div>
+
+            <button type="submit" name="formconnexion">Submit
+            </button>
+
+        </form>
+
+        <section class="bouton">
+          <a href="inscription.php">
+            <button>
+            SI VOUS N'AVEZ PAS ENCORE DE COMPTE
+            </button>
+          </a>
+        </section>
+
+
+        <section class="errors">
+    <!--Alerte (erreur ou succès)-->
+    <?php if (isset($error)): ?>
+        <div class="error">
+            <p><?= $error?></p>
+        </div>
+    <?php endif; ?>
+</section>
+
 
 </main>
-            
-<?php include '../includes/footer.php'; ?>
 
+<?php include '../includes/footer.php'; ?>
