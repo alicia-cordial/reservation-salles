@@ -1,36 +1,34 @@
-/*GENERAL*/
-
-* {
-    margin: 0;
-    padding: 0;
-    background-size: 100%;
-    /*border: 1px solid black;*/
-}
-
-body {
-    min-height: 100vh;
-    justify-content: space-between;
-    font-family: 'Inconsolata', monospace;
-}
-
-body,
-main,
-article,
-a {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    width: 100%;
-    min-height: 100vh;
-    flex-grow: 2;
-    justify-content: space-around;
-    overflow: hidden;
-}
-
-
-/*
+    /*GENERAL*/
+    
+    * {
+        margin: 0;
+        padding: 0;
+        background-size: 100%;
+        /*border: 1px solid black;*/
+    }
+    
+    body {
+        min-height: 100vh;
+        justify-content: space-between;
+        font-family: 'Inconsolata', monospace;
+    }
+    
+    body,
+    main,
+    article,
+    a {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    main {
+        width: 100%;
+        min-height: 100vh;
+        flex-grow: 2;
+        justify-content: space-around;
+        overflow: hidden;
+    }
+    /*
 article {
     justify-content: space-around;
     align-items: center;
@@ -40,98 +38,137 @@ article {
 }
 
 */
-
-body {
-    background-image: url(../images/biblio1.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-h1 {
-    color: white;
-    text-shadow: 2px 2px 2Px black;
-    text-align: center;
-    padding-top: 50px;
-}
-
-a {
-    color: white;
-}
-
-
-/*********FORM********/
-
-main {
-    display: flex;
-    flex-direction: column;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px/*-- à modifier en fonction de la largeur désirée --*/
-    ;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    align-items: center;
-    align-content: center;
-}
-
-form input,
-textarea,
-p {
-    color: white;
-}
-
-textarea,
-form input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid white;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-
-/******BOUTON*****/
-
-button {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: black;
-    text-decoration: none;
-    display: inline-block;
-    margin: 0 auto;
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1.428571429;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid black;
-    box-shadow: 1px 1px 1px black;
-    margin-bottom: 5px;
-    padding: 5px;
-    text-decoration: none;
-}
-
-
-/**************MESSAGES ERREURS********/
-
-.errors p {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-}
-
-.error p {
-    text-shadow: 2px 2px 2px red;
-    text-align: center;
-    font-size: 1.4em;
-}
+    
+    body {
+        background-image: url(../images/biblio1.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    h1,
+    #event h1 {
+        color: white;
+        text-shadow: 2px 2px 2Px black;
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    a {
+        color: white;
+    }
+    /*********FORM********/
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2em;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 800px/*-- à modifier en fonction de la largeur désirée --*/
+        ;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        align-items: center;
+        align-content: center;
+        font-size: 1.2em;
+    }
+    
+    form input,
+    textarea,
+    p {
+        color: white;
+    }
+    
+    textarea,
+    form input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    /******BOUTON*****/
+    
+    button {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 auto;
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.428571429;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid black;
+        box-shadow: 1px 1px 1px black;
+        margin-bottom: 5px;
+        padding: 5px;
+        text-decoration: none;
+    }
+    /**************MESSAGES ERREURS********/
+    
+    .errors p {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+    }
+    
+    .error p {
+        text-shadow: 2px 2px 2px red;
+        text-align: center;
+        font-size: 1.4em;
+    }
+    /********************************************PLANNING**************************/
+    
+    .planning {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+    }
+    
+    .jour {
+        align-content: center;
+        text-align: center;
+        font-size: 1.4em;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    tr {
+        color: pink;
+    }
+    
+    td {
+        text-align: center;
+    }
+    
+    .reserver {
+        border-collapse: collapse;
+        border: 2px solid skyblue;
+        font-size: 0.8em;
+        color: skyblue;
+    }
+    
+    #formulaire {
+        font-size: 0.6em;
+    }
+    
+    #event {
+        font-size: 0.6em;
+        color: lavender;
+    }

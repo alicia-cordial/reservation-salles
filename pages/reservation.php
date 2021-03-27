@@ -1,6 +1,6 @@
 <?php
 
-require_once '../library/user.php';
+require_once '../classes/user.php';
 
 $titre = 'Réservations';
 
@@ -16,9 +16,9 @@ session_start();
 
 
 <section id="event">
-  <div id="eventcontainer">
+
     
-  <h2>Les réservations déjà effectuées<h2>
+  <h1>Les réservations déjà effectuées<h1>
 
 
 <?php
@@ -65,7 +65,7 @@ while ($result = $requser->fetch(PDO::FETCH_ASSOC))
 echo "</table>";
 ?>
 
-  </div>
+
  </section>
 
 </main>
@@ -73,4 +73,3 @@ echo "</table>";
 
 <?php include '../includes/footer.php'; ?>
 
-</html>

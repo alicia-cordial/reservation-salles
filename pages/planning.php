@@ -24,16 +24,12 @@ if(isset($_SESSION['user'])){
      
 <main>
 
-    <section class="white-text">
 
-        <div class="row ">
-            <div class="col s12 l12 center-align">
-                <h3>Planning des réservations de salles de travail</h3>
-            </div>
-        </div>
+                <h1>Planning des disponibilités</h1>
 
-        <div class="row">
-            <div class="col s12 l12 center-align">
+
+<!---------------JOUR AUJOURD'HUI----------------------------------->
+       <div class="jour">
                 <p>
                     <?php $today = date("d-M-Y");
                     echo 'Aujourd\'hui : ' . $today;
@@ -44,13 +40,19 @@ if(isset($_SESSION['user'])){
                     echo '<div id="titreMois">Semaine en cours du  : ' . $dateDebSemaineFr . ' au ' . $dateFinSemaineFr . ' </div> '; ?>
 
                 </p>
-            </div>
-        </div>
     
-    </section>
+       </div>
+            
+    
 
+
+
+
+
+<section class="planning">
+    
     <?php
-
+/*************************PLANNING**********************************/
     $num = 0;
 
     $jourTexte = array('', 1 => 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi');
@@ -101,20 +103,20 @@ for ($h = 1; $h <= 10; $h++) {
 
             $resa = 1;
 
-            echo '<div class="box  deep-purple lighten-4 white-text">';
+            echo '<div class="reserver">';
             echo 'Titre :' . $value[0] . '</br>';
             echo 'De ' . $value[2] . ' à ' . $value[3] . ' H </br>';
             echo 'Créateur : ' . $value[4] . '</br>';
 
             if (isset($_SESSION["user"])) {
-                echo ' <a class="black-text" href = "reservation.php?id=' . $value[5] . '">Lien de la réservation</a></td>';
+                echo ' <a class="reserver" href = "reservation.php?id=' . $value[5] . '">Lien de la réservation</a></td>';
             }
 
             echo '</div>';
         }
     }
     if ($resa == 0) {
-        echo '<a class="blue black-text" href="reservation-form.php">Disponible </a>';
+        echo '<a href="reservation-form.php">Disponible </a>';
     }
     echo '</td>';
 }
@@ -125,6 +127,9 @@ for ($h = 1; $h <= 10; $h++) {
 
     ?>
 
+</section>
+
+
      </main>
      <?php include '../includes/footer.php'; ?>
-</html>
+

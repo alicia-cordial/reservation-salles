@@ -1,6 +1,6 @@
 <?php
 
-require_once '../library/user.php';
+require_once '../classes/user.php';
 
 $titre = 'Réservations salle';
 
@@ -42,55 +42,56 @@ if(isset($_SESSION['user'])){
 }
  ?>
 
+
+
 <?php include '../includes/header.php'; ?>
 
 <h1>Réservez vos créneaux horaires<h1>
 
 
-</main class="valign-wrapper">
+<main>
 <section id="resa">
       
 
   <form id="formulaire" method="post" action="reservation-form.php">
-    <h1 id="form-title"> RÉSERVER UN ESPACE</h1>
+    <h2 id="form-title"> RÉSERVER UN ESPACE</h2>
 
-    <div class="row">
-      <div class="input-field col s12">
-        <label class="black-text">TITRE</label>
-        <input id="input-line" type="text" name="titre" id="titre" placeholder="titre" class="blactk-text"/>
+    
+      <div>
+        <label>TITRE</label>
+        <input id="input-line" type="text" name="titre" id="titre" placeholder="titre"/>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="input-field col s12">
-        <label class="black-text">date début</label>
+
+
+      <div>
+        <label>date début</label>
         <input id="dateinput" type="date" name="date">
       </div>
-    </div>
+
            
-      <div class="row">
-        <div class="input-field col s12">
-          <label class="black-text">début</label>
+ 
+        <div>
+          <label>début</label>
           <input class="resahour" type="time" name="debut" min="08" max="18" step="3600"/>
       </div>
-    </div>
 
-      <div class="row">
-        <div class="input-field col s12">
+
+     
+        <div>
           <label class="black-text">fin</label>
           <input  class="resahour" type="time" name="fin" min="09" max="19" step="3600"/>
         </div>
-      </div>
+    
         
-    <div class="row">
-      <div class="input-field col s12">
+
+      <div>
         <label class="black-text">DESCRIPTION</label>
         <textarea type="textarea" name="description" class="description" id="description" ></textarea>
       </div>
-    </div>
 
-    <button class="btn waves-effect waves-light black" type="submit" name="submit">Submit
-    <i class="material-icons right">send</i>
+
+    <button type="submit" name="submit">Submit
   </button>
   
     </form>
@@ -103,4 +104,3 @@ if(isset($_SESSION['user'])){
             
 <?php include '../includes/footer.php'; ?>
 
-</html>
